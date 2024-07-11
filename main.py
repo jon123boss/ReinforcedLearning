@@ -1,17 +1,8 @@
 import numpy as np
-import matplotlib.pyplot as plt
-import random
-
-def bandit(action):
-    if action == 0:
-        p = 0.10
-    elif action == 1:
-        p = 0.20
-    elif action == 2:
-        p = 0.50
-    else:
-        p = 0.90
-    if np.random.uniform(0, 1) <= p:
+# Function to interact with the environment (slot machines)
+def play_slot_machine(action):
+    probabilities = [0.1, 0.9, 0.5, 0.2]
+    if np.random.uniform(0,1) <= probabilities[action]:
         return 100
     else:
         return 0
